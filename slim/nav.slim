@@ -1,0 +1,68 @@
+.navbar-wrapper
+  .container-fluid
+    .navbar.navbar-static-top role="navigation" 
+      .container
+        .row.row-action
+          .col-lg-2.col-md-3.col-sm-4.col-xs-7
+            .navbar-header 
+              a.navbar-brand href="http://cityquest.ru" 
+                img src="img/logo3.svg" /
+          .col-lg-8.col-md-6.col-sm-1#top_menu_container.hidden-xs.navbar-inner
+            #top_menu.navbar-collapse.collapse
+              ul.nav.navbar-nav.navbar-nav-main
+                li.hidden.hidden-lg
+                  a#close_top_menu
+                    span aria-hidden="true"  ×
+                    span.sr-only Close
+                li.active
+                  a href="/" Квесты
+                li
+                  a href="/" Перформанс
+                li
+                  a href="/" Экшн
+
+              ul.nav.navbar-nav.visible-lg
+                li
+                  a href="/giftcard" Подарочная карта
+                li
+                  a href="/franchise" Франшиза
+                li
+                  a href="/contact" Контакты
+                li.phone-li
+                  a href="#" +7 (495) 213 45 67
+          .col-lg-2.col-md-3.col-sm-7.col-xs-5
+            .pull-right.right-nav-btn
+              button#show-menu.btn.navbar-toggle.btn-topline type="button" 
+                span.icos
+                  span.icon-bar
+                  span.icon-bar
+                  span.icon-bar
+                span Меню
+              #for-city
+                .btn-group.city-select
+                  button.btn.btn-link.ico-msq data-toggle="dropdown" type="button" 
+                    i.glyphicon.glyphicon-map-marker
+                    span Москва
+                    i.glyphicon.glyphicon-menu-down
+                  ul.dropdown-menu role="menu" 
+                    li
+                      a href="http://cityquest.kz/"  Астана
+                    li
+                      a href="http://irk.cityquest.ru/"  Иркутск
+                    li
+                      a href="http://vlg.cityquest.ru/"  Волгоград
+                    li
+                      a href="http://nrn.cityquest.ru/"  Новороссийск
+                    li
+                      a href="http://nsk.cityquest.ru/"  Новосибирск
+              #for-local.hide
+                .btn-group.local-select.hidden-xs
+                  button.btn.btn-link.ico-earth data-toggle="dropdown" type="button" 
+                    span Ru
+                  ul.dropdown-menu role="menu" 
+                    li
+                      a href="/kz"  Kazakh
+              #for-login-pl
+                a.btn.btn-topline.btn-default data-toggle="modal" href="/user/profile" 
+                  i.icon.icon-lock
+                  | КАБИНЕТ

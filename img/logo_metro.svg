@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="47px" height="47px" viewBox="0 0 47 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>cq_icons_metro</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop" sketch:type="MSArtboardGroup" transform="translate(-682.000000, -427.000000)">
+            <g id="cq_icons_metro" sketch:type="MSLayerGroup" transform="translate(682.000000, 425.000000)">
+                <g id="Group-2" transform="translate(0.000000, 2.000000)" fill="#FFFFFF" sketch:type="MSShapeGroup">
+                    <path d="M46.9,23.4 C46.9,36.3 36.4,46.8 23.5,46.8 C10.5,46.9 0,36.4 0,23.4 C0,10.5 10.5,0 23.4,0 C36.4,0 46.9,10.5 46.9,23.4 L46.9,23.4 Z" id="Shape"></path>
+                </g>
+                <path d="M10.4248957,31.0269884 L10.4248957,34.0034899 L18.9882816,34.0034899 L18.9882816,31.0269884 L17.9943236,31.0269884 L19.2509373,26.7291904 L23.5384945,33.0225996 L27.3350702,26.203445 L29.0070185,31.0269889 L28.0819455,31.0065769 L28.0825362,34.0034894 L36.0158252,33.9077058 L36.0376922,31.0269892 L35.0249723,31.026989 L28.8023952,15.023632 L23.5384945,25.0013604 L18.5573315,15.023632 L12.0022583,31.0269884 L10.4248957,31.0269884 Z" id="Path-152" fill="#172357" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>
