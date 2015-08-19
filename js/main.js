@@ -126,9 +126,9 @@ function init_map() {
 		lineSymbol = {
 			path: google.maps.SymbolPath.CIRCLE,
 			strokeOpacity: 1,
-			scale: 3,
+			scale: 2,
 			fillColor: '#ffffff',
-			fillOpacity: .7,
+			fillOpacity: 1,
 			strokeWeight: 0,
 		},
 		myMapOptions = {
@@ -140,7 +140,7 @@ function init_map() {
 				style: google.maps.ZoomControlStyle.LARGE,
 				position: google.maps.ControlPosition.RIGHT_TOP
 			},
-			center: {lat: 55.715581, lng: 37.572087},
+			center: {lat: 55.711498, lng: 37.567898}, 
 			mapTypeId: google.maps.MapTypeId.ROADMAP,
 			styles:map_style
 		},
@@ -165,7 +165,7 @@ function init_map() {
 	ways_by_car.push(
 		new google.maps.Polyline({path:
 			[
-				new google.maps.LatLng(55.721940, 37.555088),
+				new google.maps.LatLng(55.720365, 37.560697),
 				new google.maps.LatLng(55.718991, 37.564915),
 				new google.maps.LatLng(55.717746, 37.568456),
 				new google.maps.LatLng(55.717609, 37.568640),
@@ -181,7 +181,7 @@ function init_map() {
 				// new google.maps.LatLng(55.713217, 37.572532),
 				// new google.maps.LatLng(55.713219, 37.572522),
 			],
-			strokeColor: "#ffffff", strokeOpacity: 1.0, strokeWeight: 4,
+			strokeColor: "#ffffff", strokeOpacity: 1.0, strokeWeight: 2,
 		})
 	);
 
@@ -197,13 +197,14 @@ function init_map() {
 				// new google.maps.LatLng(55.713217, 37.572532),
 				new google.maps.LatLng(55.713352, 37.572957),
 			],
-			strokeColor: "#ffffff", strokeOpacity: 1.0, strokeWeight: 4
+			strokeColor: "#ffffff", strokeOpacity: 1.0, strokeWeight: 2
 		})
 	);
 	// путь на машине 3
 	ways_by_car.push(
 		new google.maps.Polyline({path:
 			[
+				new google.maps.LatLng(55.713401, 37.578305),
 				new google.maps.LatLng(55.714153, 37.577268),
 				new google.maps.LatLng(55.714914, 37.576190),
 				new google.maps.LatLng(55.715586, 37.575041),
@@ -221,7 +222,7 @@ function init_map() {
 				new google.maps.LatLng(55.717479, 37.568437),
 				new google.maps.LatLng(55.717374, 37.568415),
 			],
-			strokeColor: "#78c3e7", strokeOpacity: 1.0, strokeWeight: 4
+			strokeColor: "#ffffff", strokeOpacity: 1.0, strokeWeight: 2 //78c3e7
 		})
 	);
 	// Проезд по территории 
@@ -244,7 +245,7 @@ function init_map() {
 				new google.maps.LatLng(55.715053, 37.571526),
 				new google.maps.LatLng(55.715537, 37.572309),
 			],
-			strokeColor: "#ffffff", strokeOpacity: 1.0, strokeWeight: 4
+			strokeColor: "#ffffff", strokeOpacity: 1.0, strokeWeight: 2
 		})
 	);
 	// соединим стрелки
@@ -254,7 +255,7 @@ function init_map() {
 				new google.maps.LatLng(55.713327, 37.572883),
 				new google.maps.LatLng(55.713053, 37.571975),
 			],
-			strokeColor: "#ffffff", strokeOpacity: 1.0, strokeWeight: 4
+			strokeColor: "#ffffff", strokeOpacity: 1.0, strokeWeight: 2
 		})
 	)
 	// Create the polyline and add the symbol via the 'icons' property.
@@ -294,6 +295,39 @@ function init_map() {
 			strokeWeight: 4
 		})
 	);
+
+	//1
+	ways_by_car.push(
+		new google.maps.InfoWindow({
+			disableAutoPan:true,
+			//maxWidth: 150,
+			position: new google.maps.LatLng(55.716683, 37.579464),
+			content: "<div style='color:#000; font-size:11px; position: relative; left:10px;'>"+
+				"Заезд с Фрунзенской набережной</div>"
+		})
+	);
+	//2
+	ways_by_car.push(
+		new google.maps.InfoWindow({
+			disableAutoPan:true,
+			//maxWidth: 150,
+			position: new google.maps.LatLng(55.713546, 37.578069),
+			content: "<div style='color:#000; font-size:11px; position: relative; left:10px;'>"+
+				"Заезд с ТТК (внешняя сторона)</div>"
+		})
+	);
+	//3
+	ways_by_car.push(
+		new google.maps.InfoWindow({
+			disableAutoPan:true,
+			//maxWidth: 150,
+			position: new google.maps.LatLng(55.719209, 37.564379),
+			content: "<div style='color:#000; font-size:11px; position: relative; left:10px;'>"+
+				"Заезд с ТТК (внутренняя сторона)</div>"
+		})
+	);
+
+
 
 	// Проход по территории пешком
 	ways_by_foot.push(
@@ -380,10 +414,12 @@ $(function() {
 			ways.setMap(null);
 		});
 
-		$.each(ways_by_car, function(i, ways){
-			ways.setMap(map);
+		$.each(ways_by_car, function(i, way){
+			// console.log(way, way.disableAutoPan);
+			way.setMap(map);
+			// if (typeof(way.disableAutoPan) != 'undefined') {}
 		});
-
+		$('.gm-style-iw div').css('overflow','visible');
 	});
 
 
@@ -424,4 +460,64 @@ $(function() {
 
 		set_video_bgr();
 	}
+
+
+
+	$('#show-menu').click(function() {
+
+		if ((document.body.clientWidth < 1025 && document.body.clientWidth > 980) || document.body.clientWidth < 768) {
+			if ($('#for-select-city').text() == '') {
+				$('.city-select').show().appendTo('#for-select-city');
+				$('#for-city').html('');
+			}
+
+			if ($('#for-login').text() == '') {
+				$('#for-login-pl .btn').show().css('display', 'inline-block').appendTo('#for-login');
+				$('#for-login-pl').html('');
+			}
+		} else {
+			if ($('#for-login-pl').text() == '') {
+				$('#for-login-pl .btn').hide().appendTo('#for-login-pl');
+				$('#for-login').html('')
+			}
+			if ($('#for-city').text() == '') {
+				$('.city-select').hide().appendTo('#for-city');
+				$('#for-select-city').html('');
+			}
+		}
+
+		if ($('#myModalMenu #for-menu').text() == '') {
+			$('#top_menu').show().appendTo('#myModalMenu #for-menu');
+
+		}
+
+		if ( document.body.clientWidth < 1025 && document.body.clientWidth > 991 ) {
+			$('#second_nav').show();
+
+			// if () {
+				// top_menu_container
+			// }
+		}
+
+		$('#myModalMenu').modal('toggle');
+	});
+
+	$('#myModalMenu').on('hidden.bs.modal', function (e) {
+		if (document.body.clientWidth < 1025 && document.body.clientWidth > 980) {
+			$('#top_menu').appendTo('#top_menu_container');
+			$('#top_menu #second_nav').hide();
+		} else {
+			$('#top_menu #second_nav').show();
+		}
+	});
+
+	var supportsOrientationChange = "onorientationchange" in window,
+		orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
+
+	window.addEventListener(orientationEvent, function() {
+		if ( document.body.clientWidth < 1025 && document.body.clientWidth > 767 ) {
+			location.reload();
+		}
+	});
+
 });

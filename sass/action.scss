@@ -73,13 +73,13 @@ i.icon {
 	font-size: 16px;
 	color:#fff;
 	padding: 14px 36px 13px;
-
-    transition: all .3s ease 0s;
+	border: none;
+    /* transition: all .3s ease 0s;
 	&:hover, &:focus {
-		background-color: rgba(31, 36, 80, .2);
-		color:#fff;
+		background-color: rgba(255,255,255,.98);
+		color:#000;
 		border-color:#fff;
-	}
+	} */
 }
 .info-block {
 	padding-left: 80px;
@@ -146,11 +146,17 @@ ul.nav {
 			}
 			&.phone-li {
 				margin-left: 38px;
+				@media (min-width: 1025px) and (max-width: 1290px) {
+					margin-left: 10px;
+				}
 			}
 		}
 	}
 	&.navbar-nav-main {
 		margin: 0px 23px 0px 0;//102px;
+		@media (min-width: 1025px) and (max-width: 1290px) {
+			margin-right: 10px;
+		}
 		li {
 			margin-left: 0px;
 			margin-right: 2px;
@@ -420,14 +426,15 @@ a.h2.twotab-action {
     line-height: 1.3;
 }
 .about_us {
-	height: 19px;
-	line-height: 19px;
-	padding: 1px 4px;
+	height: 22px;
+	line-height: 22px;
+	padding:0 4px;
 	background-color: rgba(0,0,0,0);
 	border:1px solid rgba(255,255,255,.2);
 	border-radius: 3px;
     color: rgba(193,235,255,0.4);
     font-weight: 300;
+    display: inline-block;
 }
 .hex550 {
 	position: relative;
@@ -672,6 +679,22 @@ a.h2.twotab-action {
 }
 
 
+@media (max-width: 480px) {
+	ul.nav.navbar-nav-main li a {
+    	padding-top: 15px;
+	}
+	#myModalMenu .modal-header {
+		padding-top: 5px;
+	}
+	.right-nav-btn {
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+	.navbar-nav {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
 @media (max-width: 980px) {
     .table-responsive {
         width:100%;
@@ -706,4 +729,128 @@ a.h2.twotab-action {
     .table-responsive>.table-bordered>tbody>tr:last-child>th,.table-responsive>.table-bordered>tbody>tr:last-child>td,.table-responsive>.table-bordered>tfoot>tr:last-child>th,.table-responsive>.table-bordered>tfoot>tr:last-child>td {
         border-bottom: 0
     }
+}
+
+ul.nav.navbar-nav li:hover a {
+	color:#fff;
+}
+@media (min-width: 992px) {
+	ul.nav.navbar-nav.navbar-nav-main li:hover {
+	    border-top: 5px solid rgba(255,255,255,0.5);
+	}
+}
+#myModalMenu {
+	.modal-dialog {
+		z-index: 1041;
+	}
+	#for-select-city {
+		margin-top: -3px;
+	}
+	ul.nav.navbar-nav li, ul.nav.navbar-nav li.phone-li {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	ul.nav.navbar-nav-main {
+		margin-right: 0;
+		width:100%;
+	}
+	#top_menu {
+		margin-right: 0;
+	}
+}
+@media (min-width: 1275px) {
+	.box {
+		max-height: 504px;
+		max-width: 1980px;
+		.box-content {
+
+		}
+	}
+	p.info-block {
+		right: 0;
+		left: 0;
+	}
+}	
+
+
+.button--wayra {
+	overflow: hidden;
+	position: relative;
+	-webkit-transition: border-color 0.3s, color 0.3s;
+	transition: border-color 0.3s, color 0.3s;
+	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	z-index: 1;
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 150%;
+		height: 100%;
+		background-color: rgba(255,255,255,.98);
+		z-index: -1;
+		-webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+		transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+		-webkit-transform-origin: 0% 100%;
+		transform-origin: 0% 100%;
+		-webkit-transition: -webkit-transform 0.3s, opacity 0.3s, background-color 0.3s;
+		transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+	}
+	&:hover {
+		color: #000;
+		// border-color: #fff;
+		&::before {
+			opacity: 1;
+			// background-color: rgba(255,255,255,.98);
+			-webkit-transform: rotate3d(0, 0, 1, 0deg);
+			transform: rotate3d(0, 0, 1, 0deg);
+			-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+			transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+		}
+	}
+}
+.gm-style-iw {
+	position: absolute;
+	left:15px;
+	& + div {display: none;}
+	& + div + img {display: none;}
+}
+.g_map {
+	height: 565px;
+    width: 100%;
+    overflow: hidden;
+}
+@media (max-width: 1025px) {
+	#gmap_canvas {
+	    height: 365px;
+	}
+	.g_map {
+
+	height: 345px;
+	}
+}
+.modal-backdrop.in {
+	opacity: 1;
+}
+
+@media (min-width: 992px) and (max-width: 1024px) {
+	#myModalMenu ul.nav.navbar-nav li a {
+		padding-right: 20px;
+	}
+	.navbar-toggle {
+	    display: block;
+	}
+
+	#second_nav {
+		display: none;
+	}
+
+	#myModalMenu ul.nav.navbar-nav-main {
+		width: auto;
+		margin:0 auto;
+		li.active {
+			border-top: none;
+		}
+	}
 }

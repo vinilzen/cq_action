@@ -40,7 +40,7 @@
 											<a href="/">Экшн</a>
 										</li>
 									</ul>
-									<ul class="nav navbar-nav visible-lg">
+									<ul class="nav navbar-nav" id="second_nav">
 										<li>
 											<a href="/giftcard">Подарочная карта</a>
 										</li>
@@ -59,9 +59,9 @@
 							<div class="col-lg-2 col-md-3 col-sm-7 col-xs-5">
 								<div class="pull-right right-nav-btn">
 									<button class="btn navbar-toggle btn-topline" id="show-menu" type="button"><span class="icos"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></span><span>Меню</span></button>
-									<div id="for-city">
+									<div class="hidden-md" id="for-city">
 										<div class="btn-group city-select">
-											<button class="btn btn-link ico-msq" data-toggle="dropdown" type="button"><i class="glyphicon glyphicon-map-marker"></i><span>Москва</span><i class="glyphicon glyphicon-menu-down"></i></button>
+											<button class="btn btn-link ico-msq" data-toggle="dropdown" style="width: 125px;" type="button"><i class="glyphicon glyphicon-map-marker"></i><span>Москва</span><i class="glyphicon glyphicon-menu-down"></i></button>
 											<ul class="dropdown-menu" role="menu">
 												<li>
 													<a href="http://cityquest.kz/"> Астана</a>
@@ -81,7 +81,7 @@
 											</ul>
 										</div>
 									</div>
-									<div class="hide" id="for-local">
+									<div class="hide hidden-md" id="for-local">
 										<div class="btn-group local-select hidden-xs">
 											<button class="btn btn-link ico-earth" data-toggle="dropdown" type="button"><span>Ru</span></button>
 											<ul class="dropdown-menu" role="menu">
@@ -91,7 +91,7 @@
 											</ul>
 										</div>
 									</div>
-									<div id="for-login-pl">
+									<div class="hidden-md" id="for-login-pl">
 										<a class="btn btn-topline btn-default" data-toggle="modal" href="/user/profile"><i class="icon icon-lock"></i>КАБИНЕТ</a>
 									</div>
 								</div>
@@ -111,7 +111,7 @@
 						<p class="lead-p">
 							ЭКШН — новый вид активных развлечений, где участникам предстоит выполнять спортивные задания на ловкость, силу и скорость, которые будут сопровождаться интеллектуальными загадками. Чем слаженней будет работа всей команды, тем больше вы сможете набрать игровых очков.
 						</p>
-						<div class="btn btn-lg btn-blur">
+						<div class="btn btn-lg btn-blur button--wayra">
 							Записаться
 						</div>
 					</div>
@@ -1221,7 +1221,9 @@
 		<div class="row">
 			<div class="container-fluid">
 				<div class="col-xs-12 route-map">
-					<div id="gmap_canvas"></div>
+					<div class="g_map">
+						<div id="gmap_canvas"></div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -1267,5 +1269,23 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/main.js"></script>
+		<div aria-hidden="true" class="modal fade" id="myModalMenu" role="dialog" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header text-center">
+						<button class="close" data-dismiss="modal" type="button"><span aria-hidden="true"> &times;</span><span class="sr-only">Close</span></button>
+					</div>
+					<div class="modal-body">
+						<div class="row right-nav-btn">
+							<div class="col-xs-6 text-right" id="for-select-city"></div>
+							<div class="col-xs-6" id="for-login"></div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12" id="for-menu"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>

@@ -21,7 +21,7 @@
                 li
                   a href="/" Экшн
 
-              ul.nav.navbar-nav.visible-lg
+              ul.nav.navbar-nav#second_nav
                 li
                   a href="/giftcard" Подарочная карта
                 li
@@ -38,9 +38,9 @@
                   span.icon-bar
                   span.icon-bar
                 span Меню
-              #for-city
+              #for-city.hidden-md
                 .btn-group.city-select
-                  button.btn.btn-link.ico-msq data-toggle="dropdown" type="button" 
+                  button.btn.btn-link.ico-msq data-toggle="dropdown" type="button" style="width: 125px;"
                     i.glyphicon.glyphicon-map-marker
                     span Москва
                     i.glyphicon.glyphicon-menu-down
@@ -55,14 +55,14 @@
                       a href="http://nrn.cityquest.ru/"  Новороссийск
                     li
                       a href="http://nsk.cityquest.ru/"  Новосибирск
-              #for-local.hide
+              #for-local.hide.hidden-md
                 .btn-group.local-select.hidden-xs
                   button.btn.btn-link.ico-earth data-toggle="dropdown" type="button" 
                     span Ru
                   ul.dropdown-menu role="menu" 
                     li
                       a href="/kz"  Kazakh
-              #for-login-pl
+              #for-login-pl.hidden-md
                 a.btn.btn-topline.btn-default data-toggle="modal" href="/user/profile" 
                   i.icon.icon-lock
                   | КАБИНЕТ

@@ -11,7 +11,7 @@ html
             h1 Испытай себя и свою команду
             p.lead-p ЭКШН — новый вид активных развлечений, где участникам предстоит выполнять спортивные задания на ловкость, силу и скорость, которые будут сопровождаться интеллектуальными загадками. Чем слаженней будет работа всей команды, тем больше вы сможете набрать игровых очков.
 
-            .btn.btn-lg.btn-blur Записаться
+            .btn.btn-lg.btn-blur.button--wayra Записаться
 
     .row.row-black
       .box.ratio
@@ -983,11 +983,8 @@ html
     .row
       .container-fluid  
         .col-xs-12.route-map
-          #gmap_canvas
-          
-          
-          / iframe width="100%" height="570" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=Лужнецкая+набережная,+2/4+строение+37,+Москва,+город+Москва,+Россия&destination=Воробьёвы+горы+(станция+метро),+Лужнецкая+набережная,+Москва,+Россия&key=AIzaSyAyzBSzHbbbGXMcedo9k5g6SKdGMrEwx1s"
-          / img.img-responsive style="width:100%" src="img/map_walk.jpg" alt=""/
+          .g_map
+            #gmap_canvas
 
 
     .container-fluid
@@ -1044,3 +1041,17 @@ html
     script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"
     script src="js/bootstrap.min.js"
     script src="js/main.js"
+
+    #myModalMenu.modal.fade aria-hidden="true" role="dialog" tabindex="-1" 
+      .modal-dialog
+        .modal-content
+          .modal-header.text-center
+            button.close data-dismiss="modal" type="button" 
+              span aria-hidden="true"  &times;
+              span.sr-only Close
+          .modal-body
+            .row.right-nav-btn
+              #for-select-city.col-xs-6.text-right
+              #for-login.col-xs-6
+            .row
+              #for-menu.col-xs-12
